@@ -1,0 +1,24 @@
+---
+- name: Ensure Node.js and npm are installed
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install curl (required for NodeSource setup)
+      apt:
+        name: curl
+        state: present
+
+    - name: Add Node.js 18.x APT repository
+      shell: curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      args:
+        warn: false
+
+    - name: Install Node.js and npm
+      apt:
+        name: nodejs
+        state: present
