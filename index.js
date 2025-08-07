@@ -6,45 +6,48 @@ app.get("/", (req, res) => {
   res.send(`
     <html>
     <head>
-      <title>DevOps Project Status</title>
+      <title>DevOps Case Study</title>
       <style>
         body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
-          padding: 40px;
-          color: #333;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          color: #2c3e50;
+          text-align: center;
+        }
+        .container {
+          background: #ffffff;
+          padding: 40px 60px;
+          border-radius: 15px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease;
+        }
+        .container:hover {
+          transform: translateY(-5px);
         }
         h1 {
-          color: #2c3e50;
+          font-size: 3em;
+          margin: 0;
+          color: #8e44ad;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        ul {
-          list-style: none;
-          padding: 0;
-        }
-        li {
-          margin: 10px 0;
-          padding: 10px;
-          background: #dff0d8;
-          border-left: 5px solid #3c763d;
-        }
-        .status {
-          margin-top: 30px;
-          font-weight: bold;
-          color: #27ae60;
+        h2 {
+          font-size: 1.5em;
+          margin: 5px 0;
+          color: #34495e;
         }
       </style>
     </head>
     <body>
-      <h1>🚀 DevOps Case Study Progress</h1>
-      <ul>
-        <li>✅ Created AWS EC2 instance using Terraform</li>
-        <li>✅ Generated and used SSH key pair</li>
-        <li>✅ Deployed Ubuntu 22.04 server</li>
-        <li>✅ Installed Node.js on EC2</li>
-        <li>✅ Set up security group & port 3000</li>
-        <li>✅ Connected via SSH and ran Node app</li>
-      </ul>
-      <p class="status">App is running successfully 🎉</p>
+      <div class="container">
+        <h1>Capgemini</h1>
+        <h2>DevOps case study 2</h2>
+        <h2>by shenila</h2>
+      </div>
     </body>
     </html>
   `);
