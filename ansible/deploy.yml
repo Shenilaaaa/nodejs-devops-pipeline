@@ -1,0 +1,35 @@
+---
+- name: Deploy Node.js App using Docker
+  hosts: localhost
+  become: true
+  tasks:
+# --- Add this new task here ---
+  - name: Copy project files to remote server
+    ansible.builtin.copy:
+      src: "{{ playbook_dir }}/../"
+      dest: "/home/ubuntu/nodejs-app-project"
+# --- End of new task ---
+
+# Your existing tasks follow...
+  - name: Start Docker service
+    service:
+      name: docker
+      state: started
+      enabled: true
+
+  - name: Build Node.js app image
+    community.docker.docker_image:
+      name: nodejs-app-image
+      build:
+        path: ..  # The new location
+      source: build
+      state: present
+
+  - name: Run Docker container for Node.js app
+    community.docker.docker_container:
+      name: nodejs-app
+      image: nodejs-app-image
+      state: started
+      restart_policy: always
+      ports:
+        - "80:3000"
