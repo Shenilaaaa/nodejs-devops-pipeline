@@ -6,11 +6,22 @@ g  Create a GitHub repo.
   Make a pull request (PR) from develop to main
  
  <img width="940" height="547" alt="image" src="https://github.com/user-attachments/assets/80accb7c-92c6-486e-9289-1eb4c979f4b2" />
+  
+ 
+
 
  
 
 Dockerization
+
+  
+
+
+
+STEP 6.4: Build and Run Docker Image Locally
  
+
+
 Create the Dockerfile
  
 
