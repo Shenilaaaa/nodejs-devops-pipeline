@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define your environment variables here
-        AWS_REGION = 'ap-south-1' // Use your AWS region
+        AWS_REGION = 'us-east-1' // Use your AWS region
     }
 
     stages {
